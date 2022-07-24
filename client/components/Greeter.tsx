@@ -11,9 +11,9 @@ export default function Greeter() {
   const { account, web3 } = globalState
   const [greetingText, setGreetingText] = useState("")
   const [greetingOutput, setGreetingOutput] = useState("")
-  const [greetingButtonLoading, greetingButton] = useButton(setGreeting, 'Set Greeting')
+  const [greetingButtonLoading, greetingButton] = useButton(setGreeting, 'Set Message')
   const [greeting, greetingInput] = useInput(greetingButtonLoading as boolean)
-  const [greetButtonLoading, greetButton] = useButton(handleGreet, 'Greet')
+  const [greetButtonLoading, greetButton] = useButton(handleGreet, 'Msg ')
   const [greet, greetInput] = useInput(greetButtonLoading as boolean)
   const contractAddress = process.env.NEXT_PUBLIC_GREETER_CONTRACT_ADDRESS
   const abiItems: AbiItem[] = web3 && GreeterContract.abi as AbiItem[]
@@ -58,8 +58,8 @@ export default function Greeter() {
       { 
         account && (
         <Grid mt="5" templateColumns="repeat(2, 1fr)" templateRows="repeat(4, 1fr)" gap={3}>
-          <GridItem><Text textAlign="right" fontWeight="bold">Greeting</Text></GridItem>
-          <GridItem><Text>{greetingText}</Text></GridItem>
+          <GridItem><Text fontSize={44} textAlign="left" fontWeight="bold">Message: </Text></GridItem>
+          <GridItem><Text fontSize={52}>{greetingText}</Text></GridItem>
           <GridItem alignItems="end">{greetingButton}</GridItem>
           <GridItem>{greetingInput}</GridItem>
           <GridItem alignItems="end">{greetButton}</GridItem>
