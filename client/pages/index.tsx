@@ -10,7 +10,7 @@ import Greeter from '../components/Greeter'
 function Home() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const title = 'Ethereum dApps Next.js Boiletplate'
+  const title = 'xx'
   return (
     <Layout>
       <Head>
@@ -22,12 +22,10 @@ function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://github.com/limcheekin/eth-dapps-nextjs-boiletplate">{title}</a>
+          Welcome to cunt 
         </h1>
 
-        <p className={styles.description}>
-          A simple dApps to demo the integration of MetaMask, WalletConnect and Greeter smart contract.
-        </p>
+     
 
         {
         // Our connect button will only handle opening
@@ -40,14 +38,6 @@ function Home() {
         <Greeter />
       </main>
 
-      <footer className={styles.footer}>
-        Powered by{' '}
-        <img className={styles.logo} src="/logos/ethereum.png" alt="Ethereum Logo" width="144" height="32" />
-        <img className={styles.logo} src="/logos/nextjs.png" alt="NextJS Logo" width="64" height="32" />
-        <img className={styles.logo} src="/logos/metamask.png" alt="MetaMask Logo" width="128" height="32" />
-        <img className={styles.logo} src="/logos/walletconnect.png" alt="WalletConnect Logo" width="128" height="32" />
-        { process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER && <div className={styles.logo}>b{process.env.NEXT_PUBLIC_GITHUB_RUN_NUMBER}</div> }
-      </footer>
     </Layout>
   )
 }
